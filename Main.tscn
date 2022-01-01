@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 184.728, 54.3747 )
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Destroyer" type="Area2D" parent="."]
+position = Vector2( 522.269, 293.351 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Destroyer"]
+shape = SubResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 524.673, 141.421 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+
+[connection signal="body_exited" from="Destroyer" to="." method="_on_Destroyer_body_exited"]
