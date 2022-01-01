@@ -10,7 +10,6 @@ func _process(delta):
 		var ball = instance_from_id(id)
 		
 		ball.position = $Position2D.position
-		ObjectPoolManager.debug_key("ball")
 		
 func _on_Destroyer_body_exited(body):
 	ObjectPoolManager.destroy(body.get_instance_id())

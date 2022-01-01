@@ -34,12 +34,11 @@ func get(key):
 	var temp_used = get_node(key+"s/used")
 	
 	var obj
-	if temp_available.get_child_count() > 1:
+	if temp_available.get_child_count() > 0:
 		obj = temp_available.get_child(0)
 		
 		if obj.has_method("obj_set"):
 			obj.obj_set()
-	
 				
 		temp_available.remove_child(obj)
 		temp_used.add_child(obj)
